@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<meta charset="utf-8">
+<head>
+ 
+</head>
+
+<body>
+ntrcn
+
+<div id="demo"></div>
+</body>
+<script>
+function out()
+
+{
+setCookie("id","");
+document.location='https://training.aeromash.ru/xtvs/';
+}
+function setCookie (name, value, expires, path, domain, secure) {
+      document.cookie = name + "=" + escape(value) +
+        ((expires) ? "; expires=" + expires : "") +
+        ((path) ? "; path=" + path : "") +
+        ((domain) ? "; domain=" + domain : "") +
+        ((secure) ? "; secure" : "");
+}
+
+ function getCookie(name) {
+	var cookie = " " + document.cookie;
+	var search = " " + name + "=";
+	var setStr = null;
+	var offset = 0;
+	var end = 0;
+	if (cookie.length > 0) {
+		offset = cookie.indexOf(search);
+		if (offset != -1) {
+			offset += search.length;
+			end = cookie.indexOf(";", offset)
+			if (end == -1) {
+				end = cookie.length;
+			}
+			setStr = unescape(cookie.substring(offset, end));
+		}
+	}
+	return(setStr);
+}
+			
+
+
+function sendResult() {
+  var someObj=[]; 
+  
+someObj = [{name:"[resdвыаццаа", answer:4},{ name:74,answer:54}];
+var xhr = new XMLHttpRequest();			
+xhr.open('POST', 'connect3_xtvr.php');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');			
+xhr.send('param=' + JSON.stringify(someObj));
+console.log(('param=' + (JSON.stringify(someObj))));
+xhr.onreadystatechange = function()
+{
+  if (this.readyState == 4) 
+  {
+    if (this.status == 200)
+    {
+     document.getElementById("demo").innerHTML = (xhr.responseText);
+    }
+    else
+    {
+      console.log('ajax error');
+    }
+  }
+};
+
+
+}
+window.onload = sendResult();
+</script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <title>отчёт</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="../xtvs_css/style_otchet_xtvr.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="wrapper">
+ &#169; Шереметьево безопасность
+    <header class="header">
+       
+            <img src="../imageTopic/logo.png" alt="foto" >
+                    
+                
+            
+
+        
+
+    </header><!-- .header-->
+
+    <main class="content">
+
+        <strong><sp2>  
+            <h1> Ваши результаты:были успешно переданны в УЦ АТБ 
+			<br>
+			
+			<hr>Сегодня&nbsp;&nbsp;<span id="timeNow"></span><br><hr>
+		
+		Cотрудник&nbsp;&nbsp;<span id="fio"></span><br><hr>
+		ТБ сотрудника&nbsp;&nbsp;<span id="tb"></span><br><hr>
+		Уровень №&nbsp;&nbsp;<span id="level"></span><br><hr>
+		Найдено объектов %&nbsp;&nbsp;<span id="errornomers"></span><br><hr>
+		Время&nbsp;&nbsp;<span id="timefortest"></span>&nbsp;сек.<br><hr>
+		Количество кликов&nbsp;&nbsp;<span id="timefortestnew"></span>&nbsp;<hr>
+		Ложных кликов&nbsp;&nbsp;<span id="badClick"></span>&nbsp;<hr>
+		Штраф %&nbsp;&nbsp;<span id="penalize"></span>&nbsp;<hr>
+		Итоговый результат %&nbsp;&nbsp;<span id="scopess"></span>&nbsp;<hr>
+		
+		</h1></sp2>
+								<div>
+<table width=400px>
+  <tr>
+    <td><button35  class="scan" onclick="document.location='../welcome.php'" ><br> ПРОДОЛЖИТЬ</button35></td>
+	<td><button35  class="scan" onclick="out();"><br> ВЫЙТИ</button35></td>
+  </tr>
+</table>
+</div>
+		
+		</strong>
+<div class="sloi2"><img src="../imageTopic/smart.png"></div>
+    </main><!-- .content -->
+
+
+
+</div><!-- .<footer class="footer">
+        <strong> </strong>
+    </footer><!-- .footer -->
+
+</body>
+<script>
+function out()
+
+{
+setCookie("id","");
+document.location='https://training.aeromash.ru/xtvs/';
+}
+function setCookie (name, value, expires, path, domain, secure) {
+      document.cookie = name + "=" + escape(value) +
+        ((expires) ? "; expires=" + expires : "") +
+        ((path) ? "; path=" + path : "") +
+        ((domain) ? "; domain=" + domain : "") +
+        ((secure) ? "; secure" : "");
+}
+
+ function getCookie(name) {
+	var cookie = " " + document.cookie;
+	var search = " " + name + "=";
+	var setStr = null;
+	var offset = 0;
+	var end = 0;
+	if (cookie.length > 0) {
+		offset = cookie.indexOf(search);
+		if (offset != -1) {
+			offset += search.length;
+			end = cookie.indexOf(";", offset)
+			if (end == -1) {
+				end = cookie.length;
+			}
+			setStr = unescape(cookie.substring(offset, end));
+		}
+	}
+	return(setStr);
+}
+			 let dateTime = new Date();
+			 document.getElementById("timeNow").innerHTML = dateTime.toLocaleString();
+			 document.getElementById("fio").innerHTML = getCookie("name_xtvr");	
+			 document.getElementById("tb").innerHTML = getCookie("id_xtvs");			 
+			 if ((parseInt(sessionStorage.getItem('level')))==4) 
+			 {document.getElementById("level").innerHTML = getCookie("courseGo");
+			 level.style.color = 'blue';} else {
+			 document.getElementById("level").innerHTML = getCookie("courseGo");
+			 level.style.color = 'black';}
+			 document.getElementById("errornomers").innerHTML = sessionStorage.getItem('errornomers');
+			 document.getElementById("timefortest").innerHTML = sessionStorage.getItem('timefortest');
+			 document.getElementById("timefortestnew").innerHTML = sessionStorage.getItem('timefortestnew');
+			 
+			 document.getElementById("penalize").innerHTML = sessionStorage.getItem('penalize');
+			 document.getElementById("badClick").innerHTML = sessionStorage.getItem('badClick');
+			 document.getElementById("scopess").innerHTML = sessionStorage.getItem('scopess');
+			 
+</script>
+</html>
+
+
+
+
