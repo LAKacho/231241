@@ -1,0 +1,206 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<style></style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <title>XtvS-тренажер</title>
+    <link rel="stylesheet" href="../../../xtvs_css/style_lesson.css">
+</head>
+<body >
+<div class="wrapper">
+    <header class="header"> </header>
+    <div id="viewport">
+	<div class="slider" id="slide" style="left: 0"  >
+	<div id="superb"></div>
+	</div> 
+	 <div id="superс"></div>
+    </div>
+    <button3 class="next" id="next" >&#9668;</button3>
+    <button3 class="prev" id="prev" >&#9658;</button3>
+    <button3 class="pause" id="pause1" >STOP</button3>
+	<button3 class="lupa" >&#128270;</button3>
+	<button3 class="zoom" id="zoom" >+</button3>
+	<button3 class="azoom" id="azoom" >	&minus;</button3>
+	<button3 class="left" id="left" >&#9668;</button3>
+	<button3 class="right" id="right" >&#9658;</button3>
+	<button3 class="top" id="top" >&#9650;</button3>
+	<button3 class="down" id="down" >&#9660;</button3>
+	<button3 class="speed" id="speed" >скорость Х2</button3>
+	<button3 class="organic" id="organic1" ></button3>
+		<button3 class="hi" id="hi1" ></button3>
+	<button3 class="nonorganic" id="nonorganic1" ></button3>
+	<button3 class="sensetiv" id="sensetiv1" ></button3>
+	<button3 class="inverse" id="inverse1" ></button3>
+	<button3 class="blackwhite" id="blackwhite1" ></button3>
+	<button3 class="exit" id="exit1" >exit</button3>
+    <img src="../../../application/OTS.jpg" width="1005" height="110" alt="">
+        <aside class="right-sidebar">
+            <img src="../../../imageTopic/MASH_Security_logo2.svg" width="250" alt="foto" onclick="click_handler()" >
+            <br><div id="viewobjectfind"></div>
+			<table><tbody><tr><td><div id="viewSlideShow"></div></td>
+			<td>Счет:<span id="scope"></span></td></tr>
+			<tr><td> таймер <p id="time"></p></td>
+			<td>количество кликов<p><div id="clics"></div></p></td></tr>
+			<tr class="photo"><td colspan="2"><div id="viewobject"  onclick="change()"; ></div></td>
+			</tr><tr><td colspan="2"><div id="viewobjecttext"></div></td></tr>
+			</tbody></table></aside></div>
+    
+	<script src="description.js"></script>
+	<script src="pathAria.js"></script>
+	<script src="pathAria_1.js"></script>
+	<script src="pathAria2.js"></script>
+	<script src="pathAria2_1.js"></script>
+
+	<script src="things.js"></script>
+	
+	<script src="../../../application/betta-kargo(learning_v1).js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../../application/jquery-3.6.1.min.js"></script>
+    <title>XtvS-тренажер</title>
+    <link rel="stylesheet" href="../../../xtvs_css/style_lesson.css">
+	
+	<style>
+	.wwrapper {
+      width: 100%;
+      margin: auto;
+    }
+
+    .popup {
+      width: 460px;
+      background: #fff;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 1001;
+      display: none;
+      box-shadow: 2px 2px 10px #ccc;
+      display: 
+    }
+	
+	.overlay {
+      background: #000;
+      opacity: 0.5;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 999;
+      display: none;
+    }
+
+    .ccontent {
+      position: relative;
+      padding: 50px 50px 20px 50px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 70px;
+      height: 20px;
+      cursor: pointer;
+      line-height: 20px;
+      color: red;
+	  font-size: 1.0em;
+	  background-color: yellow;
+    }
+	
+	.message {
+      position: relative;
+      bottom: 6px;
+      
+      width: auto;
+      height: auto;
+      text-align: center;
+      
+      color: green;
+	  font-size: 0.8em;
+    }
+	#video { 
+    z-index: 1005;
+    } 
+	</style>
+	
+</head>
+<body >
+  <div class="wwrapper">
+    <header class="header"> </header>
+    <div id="viewport">
+	<div class="slider" id="slide" style="left: 0"  >
+	<div id="superb"></div>
+	</div> 
+	 <div id="superс"></div>
+    </div>
+	<button3 class="second" id="second" >&#8634</button3>
+	
+    <button3 class="next" id="next" >&#9668;</button3>
+    <button3 class="prev" id="prev" >&#9658;</button3>
+    <button3 class="pause" id="pause1" >STOP</button3>
+	<button3 class="lupa" >&#128270;</button3>
+	<button3 class="zoom" id="zoom" >+</button3>
+	<button3 class="azoom" id="azoom" >	&minus;</button3>
+	<button3 class="left" id="left" >&#9668;</button3>
+	<button3 class="right" id="right" >&#9658;</button3>
+	<button3 class="top" id="top" >&#9650;</button3>
+	<button3 class="down" id="down" >&#9660;</button3>
+	<button3 class="speed" id="speed" >скорость Х1</button3>
+	<button3 class="organic" id="organic1" ></button3>
+		<button3 class="hi" id="hi1" ></button3>
+	<button3 class="nonorganic" id="nonorganic1" ></button3>
+	<button3 class="sensetiv" id="sensetiv1" ></button3>
+	<button3 class="inverse" id="inverse1" ></button3>
+	<button3 class="blackwhite" id="blackwhite1" ></button3>
+	<button3 class="exit" id="exit1" >exit</button3>
+    <img src="../../../application/OTS3.jpg" width="1005" height="110" alt="">
+        <aside class="right-sidebar">
+            <img src="../../../imageTopic/MASH_Security_logo2.svg" width="250" alt="foto" onclick="click_handler()" >
+            <br>
+			<br><div id="viewobjectfind"></div>
+			<table><tbody><tr><td><div id="viewSlideShow"></div></td>
+			<td>Процент выявленных предметов:<span id="scope"></span></td></tr>
+			<tr><td> таймер <p id="time"></p></td>
+			<td>количество кликов<p><div id="clics"></div></p></td></tr>
+			<tr class="photo"><td colspan="2"><div id="viewobject"  onclick="change()"; ></div></td>
+			</tr><tr><td colspan="2"><div id="viewobjecttext"></div></td></tr>
+			</tbody></table></aside>
+    
+	
+	  <div class="popup">
+    <div class="ccontent">
+      <div class="close">Закрыть</div>
+      
+	  <video id="video" width="360" height="240" autoplay></video>
+	  <div class="message"><br>Убедитесь что Вас видно!!! (в противном случае результаты тестированиея аннулируются)
+  </div>
+  </div>
+  </div>
+<div class="overlay"></div>
+	</div> 
+	
+	
+	
+	
+	
+	<script src="description.js"></script>
+	<script src="pathAria_1.js"></script>
+	<script src="pathAria.js"></script>
+	<script src="pathAria2_1.js"></script>
+	<script src="pathAria2.js"></script>
+	<script src="things.js"></script>
+	
+ <script src="../../../application/kargo+old/alfa_s.js"></script> 
+</html>
